@@ -147,19 +147,61 @@ function moveBall(){
     if (ball.x+ball.size>canvas.width){
         ball.dx = -1 * ball.dx
     }
-     //wall collison(top)
+     //wall collison(bottoom)
     if(ball.y + ball.size > canvas.height){
         ball.dy = -1 * ball.dy
+        showAllBricks()
+        score = 0
     }
     //wall colision(left)
     if (ball.x+ball.size<0){
         ball.dx = -1 * ball.dx
     }
+    //paddle collision
+    if (
+        ball.x - ball.size > paddle.x &&
+        ball.x + ball.size < paddle.x + paddle.w &&
+        ball.y + ball.size > paddle.y
+    ){
+        ball.dy = -1 * ball.dy
+    }
+
+    //brick collision
+    bricks.forEach(column =>{
+        column.forEach(brick =>{
+            if(brick.visible){
+                if(
+                    ball.y - ball.size < brick.y  + brick.h && ball.x - ball.size > brick.x && ball.x + ball.size < brick.x + brick.w
+                )
+                {
+                    ball.dy = -ball.dy
+                    brick.visible = false
+                    increaseScore()
+                }
+            }
+        })
+    })
+
 }
 
 
+//increase score
+function increaseScore(){
+    score++
 
+    if (score == brickRowCount * brickColumnCount){
+        score=0
+        showAllBricks()
+    }
+}
 
+function showAllBricks(){
+    brick.forEach(column =>{
+        column.forEach(brick => {
+            brick.visible = true
+        })
+    })
+}
 //keyboard event handler
 document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
