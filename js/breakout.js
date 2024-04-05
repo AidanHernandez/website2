@@ -6,11 +6,12 @@ ctx = canvas.getContext('2d')
 score = 0
 brickRowCount = 9
 brickColumnCount = 5
-
+pause = 1;
+pause2 = 0;
 // Create ball properties
 ball = {
     x: canvas.width / 2,
-    y: canvas.height / 2,
+    y: (canvas.height+50) / 2,
     size: 10,
     speed: 4,
     dx: 4,
@@ -67,6 +68,15 @@ function drawPaddle() {
     ctx.closePath()
 }
 
+//pause
+function drawPause(){
+    if(pause == 1)
+    {
+    ctx.font = '25px Comic Sans'
+    ctx.fillStyle = '#000000'
+    ctx.fillText(`pRess any button to start the game`, canvas.width- 500, 300)
+    }
+}
 // Draw score on canvas
 function drawScore() {
     ctx.font = '25px Comic Sans'
@@ -90,6 +100,7 @@ function drawBricks() {
 // Draw everything
 function draw() {
     ctx.clearRect(0,0, canvas.width, canvas.height)
+    drawPause()
     drawPaddle()
     drawBall()
     drawScore()
@@ -113,9 +124,33 @@ function movePaddle(){
     }
 }
 
+window.addEventListener('click', () => {
+    pause = 0;
+
+    console.log("huh");
+    console.log(pause);
+    if(pause2 <1)
+    {
+        pause2++
+        update()
+    }
+});
+
+window.addEventListener('keyup', () => {
+    pause = 0;
+    console.log("huh");
+    console.log(pause);
+    if(pause2 <1)
+    {
+        pause2++
+        update()
+    }
+});
+
 //keyboard event
+
 function keyDown(e){
-    //console.log(e.key)
+
     if(e.key == 'ArrowRight' || e.key == 'Right'){
         paddle.dx = paddle.speed
     }
@@ -133,6 +168,17 @@ function keyUp(e){
         paddle.dx=0
     }
 }
+
+function keyDown(e){
+    //console.log(e.key)
+    if(e.key == 'ArrowRight' || e.key == 'Right'){
+        paddle.dx = paddle.speed
+    }
+    if(e.key == 'ArrowLeft' || e.key == 'Left'){
+        paddle.dx = -paddle.speed
+    }
+}
+
 
 function moveBall(){
     ball.x =ball.x+ball.dx
@@ -152,6 +198,10 @@ function moveBall(){
         ball.dy = -1 * ball.dy
         showAllBricks()
         score = 0
+        ball.x =canvas.width / 2,
+        ball.y =(canvas.height+50) / 2,
+        pause2 = 0
+        pause = 1
     }
     //wall colision(left)
     if (ball.x+ball.size<0){
@@ -171,7 +221,8 @@ function moveBall(){
         column.forEach(brick =>{
             if(brick.visible){
                 if(
-                    ball.y - ball.size < brick.y  + brick.h && ball.x - ball.size > brick.x && ball.x + ball.size < brick.x + brick.w
+                    ball.y - ball.size < brick.y  + brick.h && ball.x - ball.size > brick.x && ball.x + ball.size < brick.x + brick.w&&
+                    ball.y+ball.size > brick.y
                 )
                 {
                     ball.dy = -ball.dy
@@ -207,10 +258,16 @@ document.addEventListener('keydown', keyDown)
 document.addEventListener('keyup', keyUp)
 // Update the canvas drawing and animation
 function update(){
+    if(pause == 0)
+    {
     moveBall()
     movePaddle()
     draw()
     requestAnimationFrame(update)
+    }
+    else{
+        draw()
+    }
 }
 
 update()
