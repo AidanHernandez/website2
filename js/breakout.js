@@ -131,6 +131,8 @@ window.addEventListener('click', () => {
     console.log(pause);
     if(pause2 <1)
     {
+        showAllBricks()
+        score = 0
         pause2++
         update()
     }
@@ -142,6 +144,8 @@ window.addEventListener('keyup', () => {
     console.log(pause);
     if(pause2 <1)
     {
+        showAllBricks()
+        score = 0
         pause2++
         update()
     }
@@ -196,8 +200,8 @@ function moveBall(){
      //wall collison(bottoom)
     if(ball.y + ball.size > canvas.height){
         ball.dy = -1 * ball.dy
-        showAllBricks()
-        score = 0
+
+
         ball.x =canvas.width / 2,
         ball.y =(canvas.height+50) / 2,
         pause2 = 0

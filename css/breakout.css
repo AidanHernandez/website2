@@ -63,3 +63,9 @@ h1{
     transform: translateX(0);
 }
 
+
+.color-btn{
+    position:absolute
+    top:0px;
+    left:30px;
+}
