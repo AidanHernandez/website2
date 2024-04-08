@@ -1,4 +1,5 @@
 rulesBtn = document.getElementById('rules-btn')
+colorBtn = document.getElementById('color-btn')
 rules = document.getElementById('rules')
 closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
@@ -282,4 +283,8 @@ rulesBtn.addEventListener('click', () => {
 
 closeBtn.addEventListener('click', () => {
     rules.classList.remove('show')
+})
+
+colorBtn.addEventListener('click', () => {
+    document.body.style.backgroundColor = "black";
 })

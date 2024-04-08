@@ -65,7 +65,7 @@ h1{
 
 
 .color-btn{
-    position:absolute
+    position:absolute;
     top:0px;
-    left:30px;
+    right:0px;
 }
