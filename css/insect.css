@@ -40,3 +40,58 @@ body{
 .btn:hover{
     opacity: 0.9;
 }
+
+
+.screen.up{
+    margin-top:-100vh
+}
+
+a{
+    color: white;
+}
+
+h1{
+    line-height:1.4;
+}
+
+.insects-list{
+    display:flex;
+    flex-wrap:wrap;
+    list-style-type:none;
+    justify-content:center;
+    pading:0;
+}
+
+.insects-list li{
+    margin:10px;
+}
+
+.choose-insect-btn{
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #023020;
+    cursor:pointer;
+    font-family:inherit;
+    width:150px;
+    height:150px
+}
+
+.choose-insect-btn:hover{
+    background-color:#023020;
+    color:#E6EAC1;
+}
+
+.choose-insect-btn:active{
+    background-color: rgba(255,255,255, 0.8);
+}
+
+.game-container{
+    position:relative;
+}
+
+.time{
+    postion:absolute;
+    top:20px;
+    left:20px;
+    
+}
