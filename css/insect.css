@@ -34,4 +34,5 @@ body{
     color:#023020;
     padding:15px 20px;
     cursor:pointer;
+    font-family: inherit;
 }
