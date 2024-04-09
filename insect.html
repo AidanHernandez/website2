@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the insect</title>
+    <link rel="stylesheet" href="css/insect.css">
+</head>
+<body>
+    <div class = "screen">
+        <h1>Catch the Insect</h1>
+        <button class="btn" id="start-btn">Play Game</button>
+    </div>
+
+    <div class = "screen">
+        <h1>What is your "favorite" apple</h1>
+        <ul class="insect-list">
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Red</p>
+                    <img src = "css/img/red_apple.png" alt = "red">
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Yellow</p>
+                    <img src = "css/img/yellow_apple.png" alt = "yellow">
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Green</p>
+                    <img src = "css/img/green_apple.png" alt = "green">
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Blue</p>
+                    <img src = "css/img/blue_apple.png" alt = "blue">
+                </button>
+            </li>
+            <li>
+                <button class="choose-insect-btn">
+                    <p>Pride</p>
+                    <img src = "css/img/pride_apple.png" alt = "pride">
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="screen game-container" id="game-container">
+        <h3 class="time" id="time">Time: 00:00</h3>
+        <h3 id="score" class="score">Score: 0</h3>
+        <h5 id="message" class="message">
+            Are you annoyed yet? <br>
+            You are playing an impossible game
+        </h5>
+    </div>
+
+</body>
+<script src="js/insect.js"></script>
+</html>
