@@ -1,0 +1,12 @@
+
+body{
+    background-color: #04724D;
+    color:#ffffff;
+}
+
+.figure-container{
+    fill:transparent;
+    stroke:white;
+    stoke-width: 4px;
+    stoke-linecap:round;
+}
