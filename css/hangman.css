@@ -20,7 +20,10 @@ h1{
 
 .game-container{
     padding: 20px 30px:
-    position:relative
+    position:relative;
+    margin:auto;
+    height:350px;
+    width:450px;
 }
 .figure-container{
     fill:transparent;
