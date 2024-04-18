@@ -10,3 +10,7 @@ body{
     stoke-width: 4px;
     stoke-linecap:round;
 }
+
+.figure-part{
+    display:none;
+}
