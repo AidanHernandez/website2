@@ -96,7 +96,7 @@ window.addEventListener('keydown', e=>{
 playAgainBtn.addEventListener('click', () => {
     correctLetters.length = 0
     wrongLetters.length = 0
-
+    console.log('u clicked')
     selectedIndex = Math.floor(word.length * Math.random())
     selectedWord = word[selectedIndex]
 })

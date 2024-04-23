@@ -110,7 +110,7 @@ h1{
     transform: scale(0.98);
 }
 
-.notif-container
+.notification-container
 {
     background-color: rgba(0,0,0,0.5);
     color: white;
@@ -121,12 +121,12 @@ h1{
     transition: transform 0.3s ease-in-out;
 }
 
-.notif-container
+.notification-container
 {
     margin: 0;
 }
 
-.notif-container.show
+.notification-container.show
 {
     transform: translateY(-500px);
 }
