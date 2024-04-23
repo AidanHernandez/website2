@@ -36,8 +36,8 @@ function displayWord(){
 }
 //update the wrong numebrs
 function updateWrongLettersEl(){
-    wrongLetterEl.innerHTML= `
-    
+    wrongLettersEl.innerHTML= `
+    ${wrongLetters.length > 0? '<p> wrong</p>' : ''}
     `
 }
 
