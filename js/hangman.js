@@ -94,8 +94,15 @@ window.addEventListener('keydown', e=>{
 })
 
 playAgainBtn.addEventListener('click', () => {
-    correctLetter.length = 0
+    correctLetters.length = 0
     wrongLetters.length = 0
+
+    let selectedIndex = Math.floor(word.length * Math.random())
+    let selectedWord = word[selectedIndex]
 })
 
 displayWord()
+
+updateWrongLetterEl()
+
+popup.style.display = 'none'
