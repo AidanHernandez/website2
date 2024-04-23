@@ -38,7 +38,18 @@ function displayWord(){
 function updateWrongLettersEl(){
     wrongLettersEl.innerHTML= `
     ${wrongLetters.length > 0 ? '<p>wrong</p>' : ''}
+    ${wrongLetters.map(letter => `<span>${letter}<span>`)}
     `
+
+    figureParts.forEach((part,index) => {
+        const errors =wrongLetters.length
+
+        if(index < errors){
+            part.style.display ='block'
+        }else{
+            part.style.display = 'none'
+        }
+    })
 }
 
 //show notif
