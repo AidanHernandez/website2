@@ -52,7 +52,8 @@ function updateWrongLettersEl(){
     })
 
     if(wrongLetters.length == figureParts.length){
-        finalMessage.innerText = 'unfortunatly u lost'
+        finalMessage.innerText = 'unfortunatly u lost the word was : '
+        ${selectedIndex}
         popup.style.display = 'flex'
     }
 }
