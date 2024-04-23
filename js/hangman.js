@@ -99,10 +99,14 @@ playAgainBtn.addEventListener('click', () => {
     console.log('u clicked')
     selectedIndex = Math.floor(word.length * Math.random())
     selectedWord = word[selectedIndex]
+
+    displayWord()
+
+    updateWrongLettersEl()
+
+    popup.style.display = 'none'
 })
 
 displayWord()
 
-updateWrongLettersEl()
 
-popup.style.display = 'none'
