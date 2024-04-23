@@ -1,6 +1,6 @@
 const wordEl = document.getElementById('word')
 const wrongLettersEl = document.getElementById('wrong-letters')
-const playAgainBtn = document.getElementById('play-again')
+const playAgainBtn = document.getElementById('play-button')
 const popup = document.getElementById('popup-container')
 const notification = document.getElementById('notification-container')
 const finalMessage = document.getElementById('final-message')
@@ -27,8 +27,8 @@ function displayWord(){
     `).join('')}
 
     `
-    const innerWord=wordEl.innertext.replace(/\n/g, '')
-    console.log(wordEl.innerText, innerWord)
+    const innerWord=wordEl.innerText.replace(/\n/g, '')
+
     if(innerWord == selectedWord){
         finalMessage.innerText = 'congratulations You won'
         popup.style.display = 'flex'
