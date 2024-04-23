@@ -53,7 +53,7 @@ function updateWrongLettersEl(){
 
     if(wrongLetters.length == figureParts.length){
         finalMessage.innerText = 'unfortunatly u lost'
-        popup.style.display
+        popup.style.display = 'flex'
     }
 }
 
@@ -92,5 +92,7 @@ window.addEventListener('keydown', e=>{
         }
     }
 })
+
+
 
 displayWord()
