@@ -50,7 +50,13 @@ function updateWrongLettersEl(){
             part.style.display = 'none'
         }
     })
+
+    if(wrongLetters.length == figureParts.length){
+        finalMessage.innerText = 'unfortunatly u lost'
+        popup.style.display
+    }
 }
+
 
 //show notif
 function showNotification(){
