@@ -93,6 +93,9 @@ window.addEventListener('keydown', e=>{
     }
 })
 
-
+playAgainBtn.addEventListener('click', () => {
+    correctLetter.length = 0
+    wrongLetters.length = 0
+})
 
 displayWord()
