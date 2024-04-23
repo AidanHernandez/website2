@@ -36,7 +36,9 @@ function displayWord(){
 }
 //update the wrong numebrs
 function updateWrongLettersEl(){
-    console.log('tbdwrong')
+    wrongLetterEl.innerHTML= `
+    
+    `
 }
 
 //show notif
