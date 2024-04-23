@@ -97,8 +97,8 @@ playAgainBtn.addEventListener('click', () => {
     correctLetters.length = 0
     wrongLetters.length = 0
 
-    let selectedIndex = Math.floor(word.length * Math.random())
-    let selectedWord = word[selectedIndex]
+    selectedIndex = Math.floor(word.length * Math.random())
+    selectedWord = word[selectedIndex]
 })
 
 displayWord()
