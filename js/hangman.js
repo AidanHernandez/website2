@@ -10,12 +10,13 @@ const word = ['aplication', 'programing', 'interface', 'wizard']
 
 let selectedIndex = Math.floor(word.length * Math.random())
 let selectedWord = word[selectedIndex]
-
+allow = true
 const correctLetters = []
 const wrongLetters = []
 
 //show hidden word
 function displayWord(){
+    allow = true
     wordEl.innerHTML = `
     ${selectedWord
         .split('')
@@ -32,6 +33,7 @@ function displayWord(){
     if(innerWord == selectedWord){
         finalMessage.innerText = 'congratulations You won'
         popup.style.display = 'flex'
+        allow = false
     }
 }
 //update the wrong numebrs
@@ -52,9 +54,9 @@ function updateWrongLettersEl(){
     })
 
     if(wrongLetters.length == figureParts.length){
-        finalMessage.innerText = 'unfortunatly u lost the word was : '
-        ${selectedIndex}
+        finalMessage.innerText = ('unfortunatly u lost the word was : '+ selectedWord);
         popup.style.display = 'flex'
+        allow = false;
     }
 }
 
@@ -70,6 +72,8 @@ function showNotification(){
 
 //keydown letter press
 window.addEventListener('keydown', e=>{
+    if(allow == true)
+    {
     console.log(e.keyCode)
     if (e.keyCode >= 65 && e.keyCode <=90){
         const letter = e.key
@@ -92,6 +96,7 @@ window.addEventListener('keydown', e=>{
             }
         }
     }
+}
 })
 
 playAgainBtn.addEventListener('click', () => {
