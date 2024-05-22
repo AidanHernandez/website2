@@ -65,7 +65,9 @@ h1{
 
 
 .color-btn{
+    color:black;
     position:absolute;
     top:0px;
+    color:white;
     right:0px;
 }

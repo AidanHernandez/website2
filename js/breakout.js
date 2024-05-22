@@ -5,6 +5,8 @@ closeBtn = document.getElementById('close-btn')
 canvas = document.getElementById('canvas')
 ctx = canvas.getContext('2d')
 score = 0
+color_change_paddle = 0;
+color_change = 0
 brickRowCount = 9
 brickColumnCount = 5
 pause = 1;
@@ -64,7 +66,14 @@ function drawBall() {
 function drawPaddle() {
     ctx.beginPath()
     ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h)
-    ctx.fillStyle = '#843B62'
+    if (color_change_paddle == 1)
+    {
+        ctx.fillStyle = '#ffffff'
+    }
+    else{
+        ctx.fillStyle = '#843B62'
+    }
+    
     ctx.fill()
     ctx.closePath()
 }
@@ -286,5 +295,25 @@ closeBtn.addEventListener('click', () => {
 })
 
 colorBtn.addEventListener('click', () => {
-    document.body.style.backgroundColor = "black";
+    
+
+    color_change = color_change + 1;
+    console.log(color_change % 2, "paddle", color_change_paddle);
+    if (color_change % 2 == 1)
+    {
+        document.body.style.backgroundColor = "black";
+        document.getElementById("canvas").style.background="#3b3b3b";
+        color_change_paddle = 1;
+        document.getElementById("color-btn").style.background="#ffffff";
+        document.getElementById("color-btn").style.color="black";
+    }
+    else{
+        color_change_paddle = 0;
+        document.body.style.backgroundColor = "#aaf0d1";
+        document.getElementById("canvas").style.background="#ffffff";
+    
+        document.getElementById("color-btn").style.background="black";
+        document.getElementById("color-btn").style.color="white";
+    }
+    
 })
