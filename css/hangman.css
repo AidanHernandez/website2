@@ -130,3 +130,40 @@ h1{
 {
     transform: translateY(-500px);
 }
+.nav{
+    position: fixed;
+    background-color: #222;
+    top: 0;
+    left:0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+.nav h1{
+    text-align: center;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.nav .container_links{
+
+    text-align: center;
+    justify-content:space-between;
+    top: 55vh;
+    padding:20px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav a{
+    color: white;
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav a.visited ,
+.nav a:hover{
+    color: rgb(192,57,43);
+    font-weight: bold;
+}
